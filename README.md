@@ -2,6 +2,8 @@
 
 1. **Install dependencies:**
         npm i
+2. **Install grunt-cli:**
+npm install -g grunt-cli
 
-2. **Init on terminal**
+3. **Init on terminal**
         grunt
