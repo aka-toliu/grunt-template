@@ -40,7 +40,7 @@ module.exports = function(grunt) {
         watch: {
             scripts: {
               files: ['src/js/*.js', 'src/scss/*.scss', 'index.html'],
-              tasks: ['concat', 'sass', 'cssmin', 'uglify'],
+              tasks: ['concat', 'sass'],
               options: {
                 spawn: false,
               },
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
       grunt.loadNpmTasks('grunt-contrib-cssmin');
       grunt.loadNpmTasks('grunt-contrib-uglify');
 
-      grunt.registerTask('default', ["concat", 'sass', 'cssmin', 'uglify', 'browserSync', 'watch']);
+      grunt.registerTask('default', ["concat", 'sass', 'browserSync', 'watch']);
       grunt.registerTask('build', ["concat", 'sass', 'cssmin', 'uglify']);
   };
    
