@@ -26,21 +26,21 @@ module.exports = function(grunt) {
 
           styles: {
 
-              src: ['scss/*.scss'],
-              dest: 'src/main.scss'
+              src: ['src/scss/*.scss'],
+              dest: 'src/concat.scss'
           },
           scripts: {
 
-            src: ['js/*.js'],
-            dest: 'src/main.js'
+            src: ['src/js/*.js'],
+            dest: 'src/concat.js'
         }
 
       },
 
         watch: {
             scripts: {
-              files: ['js/*.js', 'scss/*.scss', 'index.html'],
-              tasks: ['concat', 'sass'],
+              files: ['src/js/*.js', 'src/scss/*.scss', 'index.html'],
+              tasks: ['concat', 'sass', 'cssmin', 'uglify'],
               options: {
                 spawn: false,
               },
@@ -50,7 +50,26 @@ module.exports = function(grunt) {
         sass: {
           dist: {
             files: {
-              'src/main.css': 'src/main.scss'
+              'src/concat.css': 'src/concat.scss'
+            }
+          }
+        },
+
+        cssmin: {
+          options: {
+            mergeIntoShorthands: false,
+            roundingPrecision: -1
+          },
+          target: {
+            files: {
+              'dist/output.min.css': 'src/concat.css'
+            }
+          }
+        },
+        uglify: {
+          my_target: {
+            files: {
+              'dist/output.min.js': 'src/concat.js'
             }
           }
         }
@@ -62,8 +81,10 @@ module.exports = function(grunt) {
       grunt.loadNpmTasks('grunt-browser-sync');
       grunt.loadNpmTasks('grunt-contrib-watch');
       grunt.loadNpmTasks('grunt-contrib-concat');
+      grunt.loadNpmTasks('grunt-contrib-cssmin');
+      grunt.loadNpmTasks('grunt-contrib-uglify');
 
-
-      grunt.registerTask('default', ["concat", 'sass',  'browserSync', 'watch']);
+      grunt.registerTask('default', ["concat", 'sass', 'cssmin', 'uglify', 'browserSync', 'watch']);
+      grunt.registerTask('build', ["concat", 'sass', 'cssmin', 'uglify']);
   };
    
