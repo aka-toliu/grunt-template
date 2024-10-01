@@ -1,7 +1,7 @@
 
 # Grunt template
 
-Template para projetos que utilizam javascript, com compilamento de sass para css, minificação dos arquivos css e js, watch e bowsersync já configurados com grunt.
+Template para projetos que utilizam Javascript e SASS, com tarefas de compilamento, minificação, watch e bowsersync já configurados com Grunt.
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
