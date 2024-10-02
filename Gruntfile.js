@@ -61,7 +61,7 @@ grunt.initConfig({
             separator: '\n \n'
         },
         styles: {
-            src: ['src/styles/*.scss'],
+            src: ['src/scss/*.scss'],
             dest: 'src/main.scss'
         },
         scripts: {
