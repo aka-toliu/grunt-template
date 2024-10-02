@@ -24,6 +24,10 @@ Template para projetos que utilizam javascript, com compilamento de sass para cs
 ```bash
   grunt
 ```
+## Build
+```bash
+  grunt build
+```
 ## Tecnologias
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black)
